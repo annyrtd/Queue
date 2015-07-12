@@ -33,7 +33,7 @@ namespace Queue
             T temp = _items[0];
             for (int i = 0; i < _tail; i++)
                 _items[i] = _items[i + 1];
-            _tail--;
+            _items[_tail--] = default(T);
             return temp;
         }
 
@@ -43,16 +43,24 @@ namespace Queue
             return _items[_tail];
         }
 
-        // Print a queue
-        public void Print()
+        // Delete all the items in a queue.
+        public void Clear()
         {
-            for (int i= 0; i < _tail + 1; i++)
+            for (int i = 0; i < _tail + 1; i++)
             {
-                Console.WriteLine(_items[i].ToString());
+                _items[i] = default(T);
             }
+            _tail = -1;   
         }
 
-        // IEnumerable<T> realization
+        // Print a queue.
+        public void Print()
+        {
+            foreach(T item in this)
+                Console.WriteLine(item.ToString());
+        }
+
+        // IEnumerable<T> realization.
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < _tail + 1; i++)
