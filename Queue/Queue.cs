@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Queue
 {
-    class Queue<T>
+    class Queue<T>: IEnumerable<T>
     {
         private const int DefaultSize = 10;
         private T[] _items;
@@ -46,8 +46,24 @@ namespace Queue
         // Print a queue
         public void Print()
         {
+            for (int i= 0; i < _tail + 1; i++)
+            {
+                Console.WriteLine(_items[i].ToString());
+            }
+        }
+
+        // IEnumerable<T> realization
+        public IEnumerator<T> GetEnumerator()
+        {
             for (int i = 0; i < _tail + 1; i++)
-                Console.WriteLine(_items[i]);
+            {
+                yield return _items[i];
+            }
+        }
+
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }

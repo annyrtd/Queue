@@ -7,7 +7,6 @@ using System.Text;
 
 namespace Queue
 {
-
     class Program
     {
         static void Main(string[] args)
@@ -19,6 +18,11 @@ namespace Queue
             numbers.Dequeue();
             numbers.Enqueue("four");
             numbers.Enqueue("five");
+            
+            foreach (string number in numbers)
+            {
+                Console.WriteLine(number);
+            }
             numbers.Print();
         }
     }
