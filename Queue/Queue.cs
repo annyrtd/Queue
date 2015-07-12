@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -59,9 +60,9 @@ namespace Queue
         // Returns an item from a queue without removing it.
         public T Peek()
         {
-            return _items[_tail];
+            return _items[0];
         }
-
+        
         // Delete all the items in a queue.
         public void Clear()
         {
@@ -103,6 +104,10 @@ namespace Queue
 
         public static bool operator ==(Queue<T> a, Queue<T> b)
         {
+            if (a == null && b == null)
+                return true;
+            if (a == null || b == null)
+                return false;
             if (a.Count != b.Count)
                 return false;
             for (int i = 0; i < a.Count; i++)
@@ -115,14 +120,7 @@ namespace Queue
 
         public static bool operator !=(Queue<T> a, Queue<T> b)
         {
-            if (a.Count != b.Count)
-                return true;
-            for (int i = 0; i < a.Count; i++)
-            {
-                if (!a.GetElement(i).Equals(b.GetElement(i)))
-                    return true;
-            }
-            return false;
+            return !(a == b);
         }
 
         public override bool Equals(object obj)
@@ -140,7 +138,7 @@ namespace Queue
 
             return this.Equals(p);
         }
-
+        
         public bool Equals(Queue<T> a)
         {
             if (this.Count != a.Count)
