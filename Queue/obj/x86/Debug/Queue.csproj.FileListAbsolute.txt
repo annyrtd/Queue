@@ -1,0 +1,5 @@
+c:\users\барсик\documents\visual studio 2010\Projects\Queue\Queue\bin\Debug\Queue.exe
+c:\users\барсик\documents\visual studio 2010\Projects\Queue\Queue\bin\Debug\Queue.pdb
+c:\users\барсик\documents\visual studio 2010\Projects\Queue\Queue\obj\x86\Debug\Queue.exe
+c:\users\барсик\documents\visual studio 2010\Projects\Queue\Queue\obj\x86\Debug\Queue.pdb
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\Queue\obj\x86\Debug\Queue.csprojResolveAssemblyReference.cache
