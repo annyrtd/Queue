@@ -1,0 +1,7 @@
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\bin\Debug\QueueFromListTests.dll
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\bin\Debug\QueueFromListTests.pdb
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\bin\Debug\Queue.exe
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\bin\Debug\Queue.pdb
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\obj\Debug\QueueFromListTests.csprojResolveAssemblyReference.cache
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\obj\Debug\QueueFromListTests.dll
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueFromListTests\obj\Debug\QueueFromListTests.pdb

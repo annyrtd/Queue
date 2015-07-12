@@ -88,7 +88,6 @@ namespace Queue
                 yield return _items[i];
             }
         }
-
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -101,13 +100,18 @@ namespace Queue
                 throw new ArgumentOutOfRangeException();
             return _items[index];
         }
-
         public static bool operator ==(Queue<T> a, Queue<T> b)
         {
-            if (a == null && b == null)
+            if (System.Object.ReferenceEquals(a, b))
+            {
                 return true;
-            if (a == null || b == null)
+            }
+
+            if (((object)a == null) || ((object)b == null))
+            {
                 return false;
+            }
+
             if (a.Count != b.Count)
                 return false;
             for (int i = 0; i < a.Count; i++)
@@ -117,12 +121,10 @@ namespace Queue
             }
             return true;
         }
-
         public static bool operator !=(Queue<T> a, Queue<T> b)
         {
             return !(a == b);
         }
-
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -136,21 +138,9 @@ namespace Queue
                 return false;
             }
 
-            return this.Equals(p);
+            return this == p;
         }
         
-        public bool Equals(Queue<T> a)
-        {
-            if (this.Count != a.Count)
-                return false;
-            for (int i = 0; i < this.Count; i++)
-            {
-                if (!this.GetElement(i).Equals(a.GetElement(i)))
-                    return false;
-            }
-            return true;
-        }
-
         // Conversion to string
         public override string ToString()
         {
