@@ -15,10 +15,11 @@ namespace Queue
             numbers.Enqueue("one");
             numbers.Enqueue("two");
             numbers.Enqueue("three");
-            numbers.Dequeue();
             numbers.Enqueue("four");
             numbers.Enqueue("five");
-            
+            numbers.Enqueue("six");
+            numbers.Dequeue();
+           
             foreach (string number in numbers)
             {
                 Console.WriteLine(number);

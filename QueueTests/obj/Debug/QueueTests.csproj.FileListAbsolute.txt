@@ -1,0 +1,7 @@
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\bin\Debug\QueueTests.dll
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\bin\Debug\QueueTests.pdb
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\bin\Debug\Queue.exe
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\bin\Debug\Queue.pdb
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\obj\Debug\QueueTests.csprojResolveAssemblyReference.cache
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\obj\Debug\QueueTests.dll
+C:\Users\Барсик\Documents\Visual Studio 2010\Projects\Queue\QueueTests\obj\Debug\QueueTests.pdb

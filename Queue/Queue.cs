@@ -5,16 +5,35 @@ using System.Text;
 
 namespace Queue
 {
-    class Queue<T>: IEnumerable<T>
+    public class Queue<T> : System.Object, IEnumerable<T>
     {
-        private const int DefaultSize = 10;
+        private const int DefaultSize = 5;
         private T[] _items;
         private int _tail;
 
-        public Queue()
+        // Constructor, items to be added in a queue can be written in arguments.
+        public Queue(params T[] values)
         {
             _items = new T[DefaultSize];
             _tail = -1;
+            foreach (T value in values)
+            {
+                if (_tail + 1 == _items.Length)
+                    Array.Resize(ref _items, _items.Length * 2);
+                _items[++_tail] = value;
+            }
+        }
+        
+        // Property, returns size of a queue
+        public int Count
+        {
+            get { return _tail + 1; }
+        }
+
+        // Property, returns an array of items, only for tests.
+        public T[] Items
+        {
+            get { return _items; }
         }
 
         // Add an item into a queue.
@@ -53,7 +72,7 @@ namespace Queue
             _tail = -1;   
         }
 
-        // Print a queue.
+        // Print a queue, each element on a new line.
         public void Print()
         {
             foreach(T item in this)
@@ -72,6 +91,77 @@ namespace Queue
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        // Methods for comparing queues while testing.
+        private T GetElement(int index)
+        {
+            if (index > _tail)
+                throw new ArgumentOutOfRangeException();
+            return _items[index];
+        }
+
+        public static bool operator ==(Queue<T> a, Queue<T> b)
+        {
+            if (a.Count != b.Count)
+                return false;
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (!a.GetElement(i).Equals(b.GetElement(i)))
+                    return false;
+            }
+            return true;
+        }
+
+        public static bool operator !=(Queue<T> a, Queue<T> b)
+        {
+            if (a.Count != b.Count)
+                return true;
+            for (int i = 0; i < a.Count; i++)
+            {
+                if (!a.GetElement(i).Equals(b.GetElement(i)))
+                    return true;
+            }
+            return false;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+
+            Queue<T> p = obj as Queue<T>;
+            if ((System.Object)p == null)
+            {
+                return false;
+            }
+
+            return this.Equals(p);
+        }
+
+        public bool Equals(Queue<T> a)
+        {
+            if (this.Count != a.Count)
+                return false;
+            for (int i = 0; i < this.Count; i++)
+            {
+                if (!this.GetElement(i).Equals(a.GetElement(i)))
+                    return false;
+            }
+            return true;
+        }
+
+        // Conversion to string
+        public override string ToString()
+        {
+            StringBuilder queueToString = new StringBuilder();
+            foreach (T item in this)
+            {
+                queueToString.Append(item + " ");
+            }
+            return queueToString.ToString();
         }
     }
 }
