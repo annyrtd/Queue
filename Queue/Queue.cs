@@ -19,9 +19,7 @@ namespace Queue
             _tail = -1;
             foreach (T value in values)
             {
-                if (_tail + 1 == _items.Length)
-                    Array.Resize(ref _items, _items.Length * 2);
-                _items[++_tail] = value;
+                Enqueue(value);
             }
         }
         

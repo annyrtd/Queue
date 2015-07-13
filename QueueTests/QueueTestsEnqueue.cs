@@ -13,28 +13,28 @@ namespace QueueTests
         public void Enqueue_NextIndexLessThanArrayLength()
         {
             // arrange
-            Queue<int> expected = new Queue<int>(5);
             Queue<int> actual = new Queue<int>();
             
             // act
             actual.Enqueue(5);
 
             // assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(1, actual.Count);
+            Assert.AreEqual("5 ", actual.ToString());
         }
 
         [TestMethod]
         public void Enqueue_NextIndexGreaterThanArrayLength_ResizeArray()
         {
             // arrange
-            Queue<int> expected = new Queue<int>(1, 2, 3, 4, 5, 6);
             Queue<int> actual = new Queue<int>(1, 2, 3, 4, 5);
             
             // act
             actual.Enqueue(6);
 
             // assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(6, actual.Count);
+            Assert.AreEqual("1 2 3 4 5 6 ", actual.ToString());
             Assert.AreEqual(10, actual.Items.Length);
         }
     }

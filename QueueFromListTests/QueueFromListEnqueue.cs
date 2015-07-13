@@ -14,13 +14,13 @@ namespace QueueFromListTests
         {
             // arrange
             QueueFromList<int> actual = new QueueFromList<int>();
-            QueueFromList<int> expected = new QueueFromList<int>(5);
-
+            
             // act
             actual.Enqueue(5);
 
             // assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(1, actual.Count);
+            Assert.AreEqual("5 ", actual.ToString());
         }
 
         [TestMethod]
@@ -28,13 +28,13 @@ namespace QueueFromListTests
         {
             // arrange
             QueueFromList<int> actual = new QueueFromList<int>(5,6,7);
-            QueueFromList<int> expected = new QueueFromList<int>(5,6,7,8);
-
+            
             // act
             actual.Enqueue(8);
 
             // assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(4, actual.Count);
+            Assert.AreEqual("5 6 7 8 ", actual.ToString());
         }
     }
 }
